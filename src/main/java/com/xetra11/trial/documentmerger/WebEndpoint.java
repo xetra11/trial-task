@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
  **************************************/
 @RestController
 public class WebEndpoint {
-  private DocumentMergerProcessor documentMergerProcessor;
+  private DocumentProcessor documentProcessor;
 
   @Autowired
-  public WebEndpoint(DocumentMergerProcessor documentMergerProcessor) {
-    this.documentMergerProcessor = documentMergerProcessor;
+  public WebEndpoint(DocumentProcessor documentProcessor) {
+    this.documentProcessor = documentProcessor;
   }
 
   @GetMapping("/start")
   public void startProcessor() {
-    documentMergerProcessor.merge();
+    documentProcessor.merge();
   }
 }
