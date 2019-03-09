@@ -1,285 +1,188 @@
-<?xml version="1.0" encoding="UTF-8"?>
-   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-         <!-- XML Schema Generated from XML Document on Sat Mar 09 2019 14:09:50 GMT+0100 (Mitteleuropäische Normalzeit) -->
-         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
-         <xs:element name="content">
-               <xs:complexType>
-                     <xs:sequence>
-                           <xs:element name="hotel">
-                                 <xs:complexType>
-                                       <xs:sequence>
-                                             <xs:element name="giata_id" type="xs:int"></xs:element>
-                                             <xs:element name="iff" type="xs:int"></xs:element>
-                                             <xs:element name="name" type="xs:string"></xs:element>
-                                             <xs:element name="latitude" type="xs:double"></xs:element>
-                                             <xs:element name="longitude" type="xs:double"></xs:element>
-                                             <xs:element name="address">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="zip" type="xs:int"></xs:element>
-                                                               <xs:element name="city" type="xs:string"></xs:element>
-                                                               <xs:element name="country" type="xs:string"></xs:element>
-                                                               <xs:element name="formatted">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="line" maxOccurs="unbounded" type="xs:string"></xs:element>
-                                                                           </xs:sequence>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="phone" type="xs:int"></xs:element>
-                                             <xs:element name="email" type="xs:string"></xs:element>
-                                             <xs:element name="url" type="xs:string"></xs:element>
-                                             <xs:element name="update_timestamp" type="xs:string"></xs:element>
-                                             <xs:element name="category"></xs:element>
-                                             <xs:element name="region_code"></xs:element>
-                                             <xs:element name="country_name"></xs:element>
-                                             <xs:element name="texts">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="text">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="paragraph" maxOccurs="unbounded" type="xs:string">
-                                                                                       <xs:complexType>
-                                                                                             <xs:attribute name="headline" type="xs:string"></xs:attribute>
-                                                                                             <xs:attribute name="description" type="xs:string"></xs:attribute>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="copyrightText" type="xs:string"></xs:element>
-                                                                           </xs:sequence>
-                                                                           <xs:attribute name="tourOperator" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="tourOperatorLong" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="id" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="name" type="xs:string"></xs:attribute>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="usps">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="hotelAttributes">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="attribute" maxOccurs="unbounded" type="xs:string">
-                                                                                       <xs:complexType>
-                                                                                             <xs:attribute name="priority" type="xs:int"></xs:attribute>
-                                                                                             <xs:attribute name="rating" type="xs:double"></xs:attribute>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                           </xs:sequence>
-                                                                           <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="additionalTexts"></xs:element>
-                                             <xs:element name="images">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="image" maxOccurs="unbounded">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="priority" type="xs:int"></xs:element>
-                                                                                 <xs:element name="title"></xs:element>
-                                                                                 <xs:element name="alt"></xs:element>
-                                                                                 <xs:element name="category"></xs:element>
-                                                                                 <xs:element name="width" type="xs:int"></xs:element>
-                                                                                 <xs:element name="height" type="xs:int"></xs:element>
-                                                                                 <xs:element name="url" type="xs:string"></xs:element>
-                                                                           </xs:sequence>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                         <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                         <xs:attribute name="sourceLong" type="xs:string"></xs:attribute>
-                                                         <xs:attribute name="katalogid" type="xs:string"></xs:attribute>
-                                                         <xs:attribute name="katalogname" type="xs:string"></xs:attribute>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="videos">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="video">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="urls">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="url" type="xs:string">
-                                                                                                         <xs:complexType>
-                                                                                                               <xs:attribute name="type" type="xs:string"></xs:attribute>
-                                                                                                         </xs:complexType>
-                                                                                                   </xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                           </xs:sequence>
-                                                                           <xs:attribute name="hasPlayer" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                                           <xs:attribute name="priority" type="xs:int"></xs:attribute>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="attributes">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="category" maxOccurs="unbounded">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="attribute" maxOccurs="unbounded" type="xs:string"></xs:element>
-                                                                           </xs:sequence>
-                                                                           <xs:attribute name="name" type="xs:string"></xs:attribute>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                         <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="ratings">
-                                                   <xs:complexType>
-                                                         <xs:sequence>
-                                                               <xs:element name="hc_id" type="xs:int"></xs:element>
-                                                               <xs:element name="recommendation_rate" type="xs:double"></xs:element>
-                                                               <xs:element name="rating" type="xs:double"></xs:element>
-                                                               <xs:element name="reviews" type="xs:int"></xs:element>
-                                                               <xs:element name="url" type="xs:string"></xs:element>
-                                                               <xs:element name="detailedRating">
-                                                                     <xs:complexType>
-                                                                           <xs:sequence>
-                                                                                 <xs:element name="averageRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:int"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="hotelRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:int"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="locationRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:double"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="serviceRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:double"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="foodRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:double"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="roomRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:double"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="sportRating">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:double"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                                 <xs:element name="recommendation">
-                                                                                       <xs:complexType>
-                                                                                             <xs:sequence>
-                                                                                                   <xs:element name="overall" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="single" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="couple" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="family" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="friends" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="beach" type="xs:double"></xs:element>
-                                                                                                   <xs:element name="wintersport" type="xs:int"></xs:element>
-                                                                                                   <xs:element name="other" type="xs:int"></xs:element>
-                                                                                             </xs:sequence>
-                                                                                       </xs:complexType>
-                                                                                 </xs:element>
-                                                                           </xs:sequence>
-                                                                     </xs:complexType>
-                                                               </xs:element>
-                                                         </xs:sequence>
-                                                         <xs:attribute name="source" type="xs:string"></xs:attribute>
-                                                   </xs:complexType>
-                                             </xs:element>
-                                             <xs:element name="hotelAwards"></xs:element>
-                                       </xs:sequence>
-                                 </xs:complexType>
-                           </xs:element>
-                     </xs:sequence>
-               </xs:complexType>
-         </xs:element>
-   </xs:schema>
- 
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="result">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="data">
+                              <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element type="xs:string" name="PDFfile"/>
+                                          <xs:element type="xs:string" name="Hotelname"/>
+                                          <xs:element type="xs:byte" name="Hotelkategorie"/>
+                                          <xs:element type="xs:string" name="Stadtname"/>
+                                          <xs:element type="xs:string" name="Zielgebietsname"/>
+                                          <xs:element type="xs:short" name="Stadtnummer"/>
+                                          <xs:element type="xs:short" name="Zielgebietsnummer"/>
+                                          <xs:element type="xs:string" name="Landname"/>
+                                          <xs:element type="xs:string" name="Landcode"/>
+                                          <xs:element type="xs:string" name="Veranstaltercode"/>
+                                          <xs:element type="xs:date" name="datestart"/>
+                                          <xs:element type="xs:date" name="dateend"/>
+                                          <xs:element name="GeoData">
+                                                <xs:complexType>
+                                                      <xs:sequence>
+                                                            <xs:element type="xs:short" name="GiataID"/>
+                                                            <xs:element type="xs:float" name="Latitude"/>
+                                                            <xs:element type="xs:float" name="Longitude"/>
+                                                            <xs:element type="xs:byte" name="Accuracy"/>
+                                                      </xs:sequence>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element type="xs:string" name="Objectcode"/>
+                                          <xs:element name="Objectcodes">
+                                                <xs:complexType>
+                                                      <xs:sequence>
+                                                            <xs:element name="oc">
+                                                                  <xs:complexType>
+                                                                        <xs:simpleContent>
+                                                                              <xs:extension base="xs:string">
+                                                                                    <xs:attribute type="xs:byte" name="seq"/>
+                                                                              </xs:extension>
+                                                                        </xs:simpleContent>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                      </xs:sequence>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="Text">
+                                                <xs:complexType>
+                                                      <xs:simpleContent>
+                                                            <xs:extension base="xs:string">
+                                                                  <xs:attribute type="xs:string" name="lang"/>
+                                                            </xs:extension>
+                                                      </xs:simpleContent>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element type="xs:string" name="Landkarte"/>
+                                          <xs:element name="climate">
+                                                <xs:complexType>
+                                                      <xs:sequence>
+                                                            <xs:element name="day_temperature">
+                                                                  <xs:complexType>
+                                                                        <xs:sequence>
+                                                                              <xs:element type="xs:byte" name="month1"/>
+                                                                              <xs:element type="xs:byte" name="month2"/>
+                                                                              <xs:element type="xs:byte" name="month3"/>
+                                                                              <xs:element type="xs:byte" name="month4"/>
+                                                                              <xs:element type="xs:byte" name="month5"/>
+                                                                              <xs:element type="xs:byte" name="month6"/>
+                                                                              <xs:element type="xs:byte" name="month7"/>
+                                                                              <xs:element type="xs:byte" name="month8"/>
+                                                                              <xs:element type="xs:byte" name="month9"/>
+                                                                              <xs:element type="xs:byte" name="month10"/>
+                                                                              <xs:element type="xs:byte" name="month11"/>
+                                                                              <xs:element type="xs:byte" name="month12"/>
+                                                                        </xs:sequence>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="night_temperature">
+                                                                  <xs:complexType>
+                                                                        <xs:sequence>
+                                                                              <xs:element type="xs:byte" name="month1"/>
+                                                                              <xs:element type="xs:byte" name="month2"/>
+                                                                              <xs:element type="xs:byte" name="month3"/>
+                                                                              <xs:element type="xs:byte" name="month4"/>
+                                                                              <xs:element type="xs:byte" name="month5"/>
+                                                                              <xs:element type="xs:byte" name="month6"/>
+                                                                              <xs:element type="xs:byte" name="month7"/>
+                                                                              <xs:element type="xs:byte" name="month8"/>
+                                                                              <xs:element type="xs:byte" name="month9"/>
+                                                                              <xs:element type="xs:byte" name="month10"/>
+                                                                              <xs:element type="xs:byte" name="month11"/>
+                                                                              <xs:element type="xs:byte" name="month12"/>
+                                                                        </xs:sequence>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="sunshine">
+                                                                  <xs:complexType>
+                                                                        <xs:sequence>
+                                                                              <xs:element type="xs:byte" name="month1"/>
+                                                                              <xs:element type="xs:byte" name="month2"/>
+                                                                              <xs:element type="xs:byte" name="month3"/>
+                                                                              <xs:element type="xs:byte" name="month4"/>
+                                                                              <xs:element type="xs:byte" name="month5"/>
+                                                                              <xs:element type="xs:byte" name="month6"/>
+                                                                              <xs:element type="xs:byte" name="month7"/>
+                                                                              <xs:element type="xs:byte" name="month8"/>
+                                                                              <xs:element type="xs:byte" name="month9"/>
+                                                                              <xs:element type="xs:byte" name="month10"/>
+                                                                              <xs:element type="xs:byte" name="month11"/>
+                                                                              <xs:element type="xs:byte" name="month12"/>
+                                                                        </xs:sequence>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="rainday">
+                                                                  <xs:complexType>
+                                                                        <xs:sequence>
+                                                                              <xs:element type="xs:byte" name="month1"/>
+                                                                              <xs:element type="xs:byte" name="month2"/>
+                                                                              <xs:element type="xs:byte" name="month3"/>
+                                                                              <xs:element type="xs:byte" name="month4"/>
+                                                                              <xs:element type="xs:byte" name="month5"/>
+                                                                              <xs:element type="xs:byte" name="month6"/>
+                                                                              <xs:element type="xs:byte" name="month7"/>
+                                                                              <xs:element type="xs:byte" name="month8"/>
+                                                                              <xs:element type="xs:byte" name="month9"/>
+                                                                              <xs:element type="xs:byte" name="month10"/>
+                                                                              <xs:element type="xs:byte" name="month11"/>
+                                                                              <xs:element type="xs:byte" name="month12"/>
+                                                                        </xs:sequence>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="water_temperature">
+                                                                  <xs:complexType>
+                                                                        <xs:sequence>
+                                                                              <xs:element type="xs:byte" name="month1"/>
+                                                                              <xs:element type="xs:byte" name="month2"/>
+                                                                              <xs:element type="xs:byte" name="month3"/>
+                                                                              <xs:element type="xs:byte" name="month4"/>
+                                                                              <xs:element type="xs:byte" name="month5"/>
+                                                                              <xs:element type="xs:byte" name="month6"/>
+                                                                              <xs:element type="xs:byte" name="month7"/>
+                                                                              <xs:element type="xs:byte" name="month8"/>
+                                                                              <xs:element type="xs:byte" name="month9"/>
+                                                                              <xs:element type="xs:byte" name="month10"/>
+                                                                              <xs:element type="xs:byte" name="month11"/>
+                                                                              <xs:element type="xs:byte" name="month12"/>
+                                                                        </xs:sequence>
+                                                                  </xs:complexType>
+                                                            </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute type="xs:string" name="kind"/>
+                                                      <xs:attribute type="xs:short" name="id"/>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element type="xs:short" name="KatalogID"/>
+                                          <xs:element type="xs:short" name="Katalogseite"/>
+                                          <xs:element type="xs:byte" name="Preisseite"/>
+                                          <xs:element type="xs:string" name="Katalogname"/>
+                                          <xs:element type="xs:string" name="Veranstaltername"/>
+                                          <xs:element type="xs:short" name="VeranstalterID"/>
+                                          <xs:element type="xs:int" name="KataloghotelID"/>
+                                          <xs:element type="xs:string" name="KatalogSaisonTyp"/>
+                                          <xs:element name="Bildfile" maxOccurs="unbounded" minOccurs="0">
+                                                <xs:complexType>
+                                                      <xs:simpleContent>
+                                                            <xs:extension base="xs:string">
+                                                                  <xs:attribute type="xs:string" name="typ" use="optional"/>
+                                                                  <xs:attribute type="xs:byte" name="seq" use="optional"/>
+                                                                  <xs:attribute type="xs:short" name="size" use="optional"/>
+                                                                  <xs:attribute type="xs:short" name="width" use="optional"/>
+                                                                  <xs:attribute type="xs:short" name="height" use="optional"/>
+                                                                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                                                            </xs:extension>
+                                                      </xs:simpleContent>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element type="xs:anyURI" name="Textfile"/>
+                                          <xs:element type="xs:string" name="Klimagrafik"/>
+                                          <xs:element type="xs:string" name="AGB"/>
+                                          <xs:element type="xs:anyURI" name="TDS"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:byte" name="id"/>
+                              </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="found"/>
+            </xs:complexType>
+      </xs:element>
+</xs:schema>
