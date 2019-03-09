@@ -1,10 +1,10 @@
-package com.xetra11.trial.documentmerger;
+package com.xetra11.trial.documentmerger.combiner;
 
+import com.xetra11.trial.documentmerger.model.DocumentPair;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.validation.constraints.NotNull;
@@ -19,7 +19,8 @@ import java.util.Optional;
  * Author: xetra11                     
  * Datum: 3/9/2019                      
  * Funktion/Komponente: -              
- * Beschreibung: -                     
+ * Beschreibung: Combines COAH and GIATA Files. Actually it will only merge the GIATA document as sibling beneath
+ * the "giata_id" element of the COAH file. It should be replaced by the GIATA document in the future.
  * API: -                              
  **************************************/
 @Service

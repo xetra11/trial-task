@@ -1,4 +1,4 @@
-package com.xetra11.trial.documentmerger;
+package com.xetra11.trial.documentmerger.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

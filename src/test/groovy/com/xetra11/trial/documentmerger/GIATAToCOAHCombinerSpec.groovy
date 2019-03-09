@@ -1,15 +1,8 @@
 package com.xetra11.trial.documentmerger
 
-import org.apache.commons.io.FileUtils
+import com.xetra11.trial.documentmerger.combiner.GIATAToCOAHCombiner
 import org.w3c.dom.Document
-import org.w3c.dom.Node
-import org.w3c.dom.NodeList
 import spock.lang.Specification
-
-import javax.print.Doc
-import javax.xml.parsers.DocumentBuilder
-import javax.xml.parsers.DocumentBuilderFactory
-import java.nio.charset.Charset
 
 /***************************************
  * Author: xetra11                     

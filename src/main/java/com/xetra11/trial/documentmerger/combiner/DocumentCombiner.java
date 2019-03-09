@@ -1,8 +1,8 @@
-package com.xetra11.trial.documentmerger;
+package com.xetra11.trial.documentmerger.combiner;
 
+import com.xetra11.trial.documentmerger.model.DocumentPair;
 import org.w3c.dom.Document;
 
-import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Optional;
 

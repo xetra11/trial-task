@@ -1,6 +1,8 @@
-package com.xetra11.trial.documentmerger;
+package com.xetra11.trial.documentmerger.processor;
 
+import com.xetra11.trial.documentmerger.combiner.DocumentCombiner;
 import com.xetra11.trial.documentmerger.helper.DocumentToString;
+import com.xetra11.trial.documentmerger.model.DocumentPair;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
@@ -18,7 +20,6 @@ import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,8 +28,9 @@ import java.util.stream.Collectors;
  * Author: xetra11                     
  * Datum: 3/9/2019                      
  * Funktion/Komponente: -              
- * Beschreibung: -                     
- * API: -                              
+ * Beschreibung: Processes all configured .xml/.json files.
+ * Will combine coah/giata file pairs by id and integrate giata files into the coah file
+ * API: -
  **************************************/
 @Service
 @Slf4j
