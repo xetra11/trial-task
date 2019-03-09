@@ -5,12 +5,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
+import java.util.Objects;
 
 /***************************************
  * Author: xetra11                     
@@ -19,10 +22,14 @@ import java.nio.file.Path;
  * Beschreibung: -                     
  * API: -                              
  **************************************/
+@Component
 @Slf4j
 public class ResultDocumentGenerator implements DocumentGenerator {
   @Override
-  public void generate(File filePath, Object result) {
+  public void generate(@NonNull File filePath,@NonNull Object result) {
+    Objects.requireNonNull(filePath, "filepath is mandatory");
+    Objects.requireNonNull(result, "result object is mandatory");
+
     try {
       FileUtils.forceMkdirParent(filePath);
     } catch (IOException e) {
