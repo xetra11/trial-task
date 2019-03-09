@@ -2,6 +2,7 @@ package com.xetra11.trial.documentmerger.webapi;
 
 import com.xetra11.trial.documentmerger.processor.DocumentProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * API: localhost:8080/start
  **************************************/
 @RestController
+@Profile("web")
 public class WebEndpoint {
   private DocumentProcessor documentProcessor;
 
