@@ -1,8 +1,9 @@
 package com.xetra11.trial.documentmerger;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.io.File;
-import java.util.List;
-import java.util.Map;
 
 /***************************************
  * Author: xetra11                     
@@ -11,8 +12,9 @@ import java.util.Map;
  * Beschreibung: -                     
  * API: -                              
  **************************************/
-public interface DocumentAppender {
-  public enum DocumentType { XML, JSON }
-
-  public void apply(File fileToAppend, Map<String, List<Object>> appendTo, DocumentType type);
+@AllArgsConstructor
+@Data
+public class DocumentPair {
+  private File fileA;
+  private File fileB;
 }

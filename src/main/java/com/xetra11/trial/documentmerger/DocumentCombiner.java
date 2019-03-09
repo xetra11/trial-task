@@ -2,6 +2,7 @@ package com.xetra11.trial.documentmerger;
 
 import org.w3c.dom.Document;
 
+import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Optional;
 
@@ -15,4 +16,5 @@ import java.util.Optional;
 public interface DocumentCombiner {
   public enum DocumentType { XML, JSON }
   public Optional<Document> combine(File fileA, File fileB);
+  public Optional<Document> combine(DocumentPair documentPair);
 }

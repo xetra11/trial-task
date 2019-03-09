@@ -27,6 +27,7 @@ import java.util.Optional;
 public class GIATAToCOAHCombiner implements DocumentCombiner {
   @Override
   public Optional<Document> combine(@NotNull File COAHfile, @NotNull File GIATAfile) {
+    log.debug("Combination of COAH file {} and GIATA file {} starting", COAHfile.getName(), GIATAfile.getName());
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = null;
@@ -34,12 +35,13 @@ public class GIATAToCOAHCombiner implements DocumentCombiner {
       try {
         Document coahDocument = builder.parse(COAHfile);
         Document giataDocument = builder.parse(GIATAfile);
-
+        log.debug("resolving nodes");
         Node giataResult = giataDocument.getElementsByTagName("result").item(0);
         Node giataIDElement = coahDocument.getElementsByTagName("giata_id").item(0);
         Node parentNode = giataIDElement.getParentNode();
         Node importedNode = coahDocument.importNode(giataResult, true);
 
+        log.debug("inserting GIATA file content");
         parentNode.insertBefore(importedNode, giataIDElement);
         return Optional.of(coahDocument);
 
@@ -51,5 +53,10 @@ public class GIATAToCOAHCombiner implements DocumentCombiner {
       log.error("document builder could not be created", e);
     }
     return Optional.empty();
+  }
+
+  @Override
+  public Optional<Document> combine(DocumentPair documentPair) {
+    return this.combine(documentPair.getFileA(), documentPair.getFileB());
   }
 }
