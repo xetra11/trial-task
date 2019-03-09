@@ -40,6 +40,8 @@ public class DocumentProcessor {
   private ArrayList<String> standaloneXMLfiles;
   @Value("${processor.standalone.json}")
   private ArrayList<String> standaloneJSONfiles;
+  @Value("${processor.output.path}")
+  private String outputPath;
 
   private final JSONObject rootJson;
   private DocumentCombiner giatToCoahCombiner;
@@ -99,13 +101,19 @@ public class DocumentProcessor {
 
   private void writeToFile() {
     log.info("starting to write");
-    File resultFile = new File("dist/test/result.json");
+    try {
+    FileUtils.forceMkdirParent(new File(outputPath));
+    File resultFile = new File(outputPath);
     try (PrintWriter printWriter = new PrintWriter(resultFile);) {
       log.info("writing in progress...");
       printWriter.println(rootJson.toString(4));
       log.info("finished writing result file {}", resultFile.getName());
     } catch (FileNotFoundException e) {
       log.error("file could not be found", e);
+    }
+    } catch (IOException e) {
+      log.error("could not create file/directory", e);
+      e.printStackTrace();
     }
   }
 
