@@ -47,9 +47,11 @@ public class DocumentProcessor {
 
   private final JSONObject rootJson;
   private DocumentCombiner giatToCoahCombiner;
+  private ImageProcessor imageProcessor;
 
   @Autowired
-  public DocumentProcessor(@Qualifier("GIATAToCOAHCombiner") DocumentCombiner giatToCoahCombiner) {
+  public DocumentProcessor(@Qualifier("GIATAToCOAHCombiner") DocumentCombiner giatToCoahCombiner,@Qualifier("jsonObjectImageProcessor") ImageProcessor imageProcessor) {
+    this.imageProcessor = imageProcessor;
     rootJson = new JSONObject("{\"documents\":[]}");
     this.giatToCoahCombiner = giatToCoahCombiner;
   }
@@ -63,8 +65,14 @@ public class DocumentProcessor {
     convertAndAppendStandaloneXMLFiles();
     log.info("append existing json files");
     appendExistingJsonFiles();
+    log.info("process images");
+    processImages();
     log.info("write result file");
     writeToFile();
+  }
+
+  private void processImages() {
+    imageProcessor.process(rootJson);
   }
 
   private void convertAndAppendStandaloneXMLFiles() {

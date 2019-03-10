@@ -40,11 +40,11 @@ public class JsonObjectImageProcessor implements ImageProcessor<JSONObject> {
       String jsonSource = jsonObject.toString(4);
 
       List<String> imageUrls = JsonPath.parse(jsonSource)
-              .read("$.content.hotel.images..image[*].url", List.class);
+              .read("$..image[*].url", List.class);
 
       log.info("{} images crawled", imageUrls.size());
 
-      List<byte[]> images = imageUrls.stream()
+      List<byte[]> images = imageUrls.parallelStream()
               .map(ImageFetcher::fetchImage)
               .collect(Collectors.toList());
 

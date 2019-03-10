@@ -28,7 +28,7 @@ class JsonObjectImageProcessorSpec extends Specification {
     def "should process all images of a given json object"(){
         given:
         JsonObjectImageProcessor uut = new JsonObjectImageProcessor();
-        File jsonFile = new File(getClass().getClassLoader().getResource("594608-coah.json").toURI());
+        File jsonFile = new File(Thread.currentThread().getContextClassLoader().getResource("merged-documents-test.json").toURI());
         String jsonString = FileUtils.readFileToString(jsonFile, Charset.forName("UTF-8"));
         JSONObject testJson = new JSONObject(jsonString);
         uut.setImageExportDirectory("dist/images/")
@@ -37,7 +37,7 @@ class JsonObjectImageProcessorSpec extends Specification {
         uut.process(testJson);
 
         then:
-        FileUtils.listFiles(new File("dist/images/"), extensions, false).size() == 35
+        FileUtils.listFiles(new File("dist/images/"), extensions, false).size() == 106
 
     }
 }

@@ -13,4 +13,5 @@ Edit the `application.properties` as followed:
 * `processor.standalone.xml` The full qualifing file name (without path) of a standalone xml file ie. `1345-coah.xml`
 * `processor.standalone.json` The full qualifing file name (without path) of a standalone xml file ie. `234-coah.xml`
 * `processor.output.path` The output path for the merged result file ie. `dist/result-file.json`
+* `processor.output.images` The output path for the crawled images  ie. `dist/images/`
 
