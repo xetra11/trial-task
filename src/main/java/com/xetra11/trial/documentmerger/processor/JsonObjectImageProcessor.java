@@ -48,6 +48,8 @@ public class JsonObjectImageProcessor implements ImageProcessor<JSONObject> {
               .map(ImageFetcher::fetchImage)
               .collect(Collectors.toList());
 
+      log.info("{} images fetched", images.size());
+
       FileUtils.cleanDirectory(new File(imageExportDirectory));
 
       images.forEach(imageBytes -> {
@@ -65,6 +67,8 @@ public class JsonObjectImageProcessor implements ImageProcessor<JSONObject> {
           e.printStackTrace();
         }
       });
+
+      log.info("{} images exported", images.size());
 
     } catch (IOException e) {
       log.error("could not create directory for image processing", e);

@@ -65,7 +65,7 @@ public class DocumentProcessor {
     convertAndAppendStandaloneXMLFiles();
     log.info("append existing json files");
     appendExistingJsonFiles();
-    log.info("process images");
+    log.info("processing images");
     processImages();
     log.info("write result file");
     writeToFile();
@@ -101,7 +101,7 @@ public class DocumentProcessor {
   }
 
   private List<Document> combineDocuments() {
-    return pairIds.stream()
+    return pairIds.parallelStream()
             .map(this::getPair)
             .map(pair -> giatToCoahCombiner.combine(pair))
             .filter(Optional::isPresent)
